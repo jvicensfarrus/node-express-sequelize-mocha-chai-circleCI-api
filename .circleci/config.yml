@@ -36,8 +36,8 @@ jobs:
       # run tests!
       - run: yarn test
 
-    test:
-      override:
+  test:
+    override:
         - mocha test --reporter mocha-junit-reporter:
             environment:
-              MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+                MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
