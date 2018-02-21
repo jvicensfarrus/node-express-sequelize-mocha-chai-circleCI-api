@@ -38,10 +38,19 @@ jobs:
 
   test:
     docker:
-        - image: circleci/node:7.10
+      - image: circleci/node:7.10
+      - image: mongo:3.4.4
     steps:
-
-        - override:
-            - mocha test --reporter mocha-junit-reporter:
-                environment:
-                    MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+      - checkout
+      - run:
+          name: Test
+          command: npm test
+      - run:
+          name: Generate code coverage
+          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
