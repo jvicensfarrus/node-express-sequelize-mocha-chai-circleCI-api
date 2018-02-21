@@ -37,7 +37,11 @@ jobs:
       - run: yarn test
 
   test:
-    override:
-        - mocha test --reporter mocha-junit-reporter:
-            environment:
-                MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+    docker:
+        - image: circleci/node:7.10
+    steps:
+        
+        override:
+            - mocha test --reporter mocha-junit-reporter:
+                environment:
+                    MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
