@@ -30,7 +30,7 @@
     "squel": "^5.10.0",
     "mocha" : "^2.4.5",
     "chai" : "^3.5.0",
-    "chai-http": "^3.0.0",
+    "chai-http": "^3.0.0"
 
   },
   "devDependencies": {
