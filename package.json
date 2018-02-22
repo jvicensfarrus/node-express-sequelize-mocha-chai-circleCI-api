@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "node_modules/mocha/bin/mocha test.js",
     "start": "nodemon ./bin/www"
   },
   "repository": {
@@ -30,8 +30,9 @@
     "squel": "^5.10.0"
   },
   "devDependencies": {
-    "chai": "^4.0.1",
+    "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "mocha": "^2.4.5",
     "sequelize-cli": "^2.7.0"
   }
 }
