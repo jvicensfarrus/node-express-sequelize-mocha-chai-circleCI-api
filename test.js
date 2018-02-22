@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var name = 'React Quickly';
+var name = 'React quickly';
 var url = ['http://reactquickly.co', 'https://www.manning.com/books/react-quickly'];
 
 describe('name and url', function(){
